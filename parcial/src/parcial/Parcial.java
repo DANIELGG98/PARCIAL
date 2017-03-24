@@ -16,7 +16,8 @@ public class Parcial {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        Ventana miventana = new Ventana();
+        miventana.setVisible(true);
     }
     
 }
