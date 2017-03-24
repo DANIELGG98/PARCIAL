@@ -45,6 +45,9 @@ public class Ventana extends javax.swing.JFrame {
         LBRESULTADO = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnsen = new javax.swing.JButton();
+        btncos = new javax.swing.JButton();
+        btntan = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
@@ -97,10 +100,46 @@ public class Ventana extends javax.swing.JFrame {
         jLabel4.setText("para operaciones trigonometricas solo el numero 1");
 
         btnsen.setText("sen");
+        btnsen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnsenMouseClicked(evt);
+            }
+        });
 
-        jButton2.setText("cos");
+        btncos.setText("cos");
+        btncos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btncosMouseClicked(evt);
+            }
+        });
 
-        jButton3.setText("tan");
+        btntan.setText("tan");
+        btntan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btntanMouseClicked(evt);
+            }
+        });
+
+        jButton1.setText("cotan");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        jButton2.setText("sec");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        jButton3.setText("csc");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,21 +152,19 @@ public class Ventana extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(LBRESULTADO, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(15, 15, 15))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LBRESULTADO, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtnum2))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtnum1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtnum2))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtnum1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnsuma)
@@ -140,9 +177,18 @@ public class Ventana extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(btnsen)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(btncos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btntan)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton3)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -166,13 +212,16 @@ public class Ventana extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnsen)
+                    .addComponent(btncos)
+                    .addComponent(btntan)
+                    .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LBRESULTADO, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -214,6 +263,54 @@ public class Ventana extends javax.swing.JFrame {
         LBRESULTADO.setText(Double.toString(Calculadora.resultado));
     }//GEN-LAST:event_btndivisionMouseClicked
 
+    private void btnsenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnsenMouseClicked
+        // TODO add your handling code here:
+        Calculadora.num1 =Integer.parseInt(txtnum1.getText());
+        Calculadora.seno();
+        LBRESULTADO.setText(Double.toString(Calculadora.resultado));
+    }//GEN-LAST:event_btnsenMouseClicked
+
+    private void btncosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncosMouseClicked
+        // TODO add your handling code here:
+        Calculadora.num1 =Integer.parseInt(txtnum1.getText());
+        Calculadora.coseno();
+        LBRESULTADO.setText(Double.toString(Calculadora.resultado));
+    }//GEN-LAST:event_btncosMouseClicked
+
+    private void btntanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btntanMouseClicked
+        // TODO add your handling code here:
+        Calculadora.num1 =Integer.parseInt(txtnum1.getText());
+        try {
+            Calculadora.tangente();
+            LBRESULTADO.setText(Double.toString(Calculadora.resultado));
+           
+        } catch (Exception e) {
+            LBRESULTADO.setText("ERROR");
+        }
+    }//GEN-LAST:event_btntanMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        Calculadora.num1 =Integer.parseInt(txtnum1.getText());
+        Calculadora.tangente();
+        LBRESULTADO.setText(Double.toString(1/Calculadora.resultado));
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        Calculadora.num1 =Integer.parseInt(txtnum1.getText());
+        Calculadora.coseno();
+        LBRESULTADO.setText(Double.toString(1/Calculadora.resultado));
+        
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        Calculadora.num1 =Integer.parseInt(txtnum1.getText());
+        Calculadora.seno();
+        LBRESULTADO.setText(Double.toString(1/Calculadora.resultado));
+    }//GEN-LAST:event_jButton3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -251,11 +348,14 @@ public class Ventana extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LBRESULTADO;
+    private javax.swing.JButton btncos;
     private javax.swing.JButton btndivision;
     private javax.swing.JButton btnmultiplicacion;
     private javax.swing.JButton btnresta;
     private javax.swing.JButton btnsen;
     private javax.swing.JButton btnsuma;
+    private javax.swing.JButton btntan;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
