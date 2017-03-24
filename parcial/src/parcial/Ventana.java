@@ -309,6 +309,8 @@ public class Ventana extends javax.swing.JFrame {
         Calculadora.num1 =Integer.parseInt(txtnum1.getText());
         Calculadora.seno();
         LBRESULTADO.setText(Double.toString(1/Calculadora.resultado));
+        
+        
     }//GEN-LAST:event_jButton3MouseClicked
 
     /**
